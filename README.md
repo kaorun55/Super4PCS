@@ -6,6 +6,14 @@ Copyright 2014 Nicolas Mellado
 Authors: Nicolas Mellado, Dror Aiger
 
 
+## Windows & Visual Studio サポートテスト
+
+ * Visual Studio 2013 : ×
+ * Visual Studio 2013 November 2013 CTP : ×
+ * Visual Studio 2015 Preview : Debug ○, Release ×
+ * LLVM for Windows (3.4.0, 3.5.0): ×
+
+
 ##Related pages
 * [Paper project page](http://geometry.cs.ucl.ac.uk/projects/2014/super4PCS)
 * [Github project page](https://github.com/nmellado/Super4PCS)
