@@ -1,7 +1,7 @@
 #ifndef IO_H
 #define IO_H
 
-#include "4pcs.h"
+#include "../4pcs.h"
 
 #include <fstream>
 #include <iostream>
@@ -10,8 +10,8 @@
 
 #include "Eigen/Core"
 
-#include <sys/time.h>
-#include <unistd.h>
+//#include <sys/time.h>
+//#include <unistd.h>
 #include <stdlib.h>
 
 

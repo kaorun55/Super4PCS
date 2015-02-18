@@ -40,7 +40,7 @@
 // demo): http://graphics.stanford.edu/~niloy/research/fpcs/fpcs_sig_08.html
 // Use google search on "4-points congruent sets" to see many related papers
 // and applications.
-
+#define _USE_MATH_DEFINES
 
 #include "4pcs.h"
 
@@ -49,6 +49,8 @@
 
 #include <hash_map>
 #include <fstream>
+
+#include <time.h>
 
 namespace match_4pcs {
 
