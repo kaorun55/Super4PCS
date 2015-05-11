@@ -73,5 +73,11 @@
     <ClCompile Include="super4pcs\4pcs.cc">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="3rdparty\chealpix\src\chealpix.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -914,7 +914,8 @@ bool MatchSuper4PCSImpl::TryQuadrilateral(double* invariant1, double* invariant2
   base_3D_[2] = tmp[best3];
   base_3D_[3] = tmp[best4];
 
-  std::array<int, 4> tmpId = {id1, id2, id3, id4};
+  //std::array<int, 4> tmpId = { id1, id2, id3, id4 };
+  int tmpId[] = {id1, id2, id3, id4};
   id1 = tmpId[best1];
   id2 = tmpId[best2];
   id3 = tmpId[best3];
@@ -1056,7 +1057,7 @@ double MatchSuper4PCSImpl::MeanDistance() {
   for (int i = 0; i < sampled_P_3D_.size(); ++i) {
     query_point << sampled_P_3D_[i].x, sampled_P_3D_[i].y, sampled_P_3D_[i].z;
 
-    typename Super4PCS::KdTree<Scalar>::Index resId =
+    Super4PCS::KdTree<Scalar>::Index resId =
     kd_tree_.doQueryRestrictedClosest(query_point, P_diameter_ * kDiameterFraction, i);
 
     if (resId != Super4PCS::KdTree<Scalar>::invalidIndex()) {
@@ -1103,7 +1104,7 @@ Scalar MatchSuper4PCSImpl::Verify(const Eigen::Matrix<Scalar, 4, 4>& mat) {
 #ifdef TEST_GLOBAL_TIMINGS
     Timer t (true);
 #endif
-    typename Super4PCS::KdTree<Scalar>::Index resId =
+    Super4PCS::KdTree<Scalar>::Index resId =
     kd_tree_.doQueryRestrictedClosest(query_point.head<3>(), sq_eps);
 
 #ifdef TEST_GLOBAL_TIMINGS
@@ -1706,13 +1707,15 @@ bool MatchSuper4PCSImpl::Perform_N_steps(int n, cv::Mat* transformation,
 
   float last_best_LCP = best_LCP_;
   bool ok;
-  int64 t0 = clock();
+  //int64 t0 = clock();
+  int64 t0 = cvGetTickCount();
   for (int i = current_trial_; i < current_trial_ + n; ++i) {
     ok = TryOneBase();
 
     float fraction_try =
         static_cast<float>(i) / static_cast<float>(number_of_trials_);
-    float fraction_time = static_cast<float>(clock() - t0) / 1000000.0 /
+	//float fraction_time = static_cast<float>(clock() - t0) / 1000000.0 /
+	float fraction_time = static_cast<float>(cvGetTickCount() - t0) / 1000000.0 /
                           options_.max_time_seconds;
     float fraction = max(fraction_time, fraction_try);
     printf("done: %d%c best: %f                  \r",

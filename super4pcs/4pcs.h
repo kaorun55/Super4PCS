@@ -44,6 +44,8 @@
 #ifndef _4PCS_H_
 #define _4PCS_H_
 
+#define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS
+
 #include <vector>
 #include <memory>
 

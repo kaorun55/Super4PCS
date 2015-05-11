@@ -51,6 +51,8 @@
 #include "utils.h"
 #include "chealpix.h"
 
+#include <vector>
+
 namespace Super4PCS{
 
 /*!

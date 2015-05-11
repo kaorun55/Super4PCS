@@ -88,7 +88,7 @@ IndexedNormalHealSet::getNeighbors(
   ChealMap* grid = getMap(p);
   if ( grid == NULL ) return;
   
-  for(typename ChealMap::const_iterator it = grid->cbegin();
+  for( ChealMap::const_iterator it = grid->cbegin();
       it != grid->cend(); it++){
     const std::vector<unsigned int>& lnei = *it;
     nei.insert( nei.end(), lnei.begin(), lnei.end() );
